@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+</head>
+<body>
+    <div>
+      <h1>Movie Recommendations</h1>
+        <form action="{{ url_for('recommendations')}}" method="post">
+            <h3>Movie Name</h3>
+            <input type="text" id="Movie" name="movie">
+            <br><br><button id="sub" type="submit ">Search</button>
+            <br>
+        </form>
+        <br><br><h3>{{ reply_message }}<h3><br>
+        {% for movie_name in movies %}
+        <h3>{{ movie_name }}<h3><br>
+        {% endfor %}
+    </div>
+</body>
+</html>
+<style media="screen">
+h1 {
+  text-align: center;
+  color: hsl(0, 80%, 50%);
+  background-color:rgba(255, 99, 71, 0.4);
+  opacity: 0.6;
+  border-style: outset;
+  border-width: 10px;
+  background-size:contain;
+  margin: 100px 100px 20px 80px;
+  height: 75px;
+  text-shadow: 2px 2px 5px red;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: FreeMono, monospace;
+}
+body {
+  background-color: lightblue;
+}
+
+h3 {
+  color: navy;
+  margin: 5px 100px 0px 80px;
+  font-family: FreeMono, monospace;
+}
+
+h1 {
+  color: green;
+  margin: 5px 50px 0px 80px;
+  font-family: FreeMono, monospace;
+}
+
+input {
+  color: navy;
+  margin: 5px 100px 5px 80px;
+  font-family: FreeMono, monospace;
+}
+button{
+  padding: 15px 32px;
+  background-color: #4CAF50;
+  border-radius: 12px;
+  font-family: FreeMono, monospace;
+  box-shadow: 0 32px 68px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin: 5px 100px 5px 80px;
+}
+
+</style>
